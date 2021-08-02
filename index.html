@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ITBootcamp Chat</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <!-- naslov chat-a -->
+    <div class="row">
+      <header class="col-12">
+        <h1>ITBootcamp Chat</h1>
+        <h2>Choose a chatroom</h2>
+      </header>
+    </div>
+
+    <!-- buttons za sobe  -->
+    <div class="row">
+      <nav>
+        <button id="general" class="col-3" class="btn">#general</button>
+        <button id="js" class="col-3" class="btn">#js</button>
+        <button id="homeworks" class="col-3" class="btn">#homeworks</button>
+        <button id="tests" class="col-3" class="btn">#tests</button>
+      </nav>
+    </div>
+
+    <!-- prostor za poruke -->
+    <div class="row">
+      <section class="col-12">
+        <ul>
+          <!-- ovde se nalaze poruke -->
+        </ul>
+      </section>
+    </div>
+
+    <!-- forma za unos poruka -->
+    <form>
+      <input id="promenaBojeInput" type="color" />
+      <button id="promenaBojeDugme">Update color</button>
+    </form>
+    <div class="row">
+      <form id="formMessage">
+        <!-- <input
+          class="col-9"
+          type="text"
+          placeholder="Your message..."
+          id="inputMessage"
+        /> -->
+        <textarea
+          class="col-9"
+          name="poljeZaPoruke"
+          id="inputMessage"
+          cols="30"
+          rows="10"
+          placeholder="Unesite poruku"
+        ></textarea>
+        <input class="col-3" type="submit" value="Send" id="btnSend" />
+      </form>
+    </div>
+
+    <!-- forma za promenu korisnickog imena -->
+    <div class="row">
+      <form id="formUsername">
+        <input
+          class="col-9"
+          type="text"
+          placeholder="Update username"
+          id="inputUsername"
+        />
+        <input class="col-3" type="submit" value="Update" id="btnUpdate" />
+      </form>
+    </div>
+    <div id="triSek"></div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyCxIq0Pp0qdrNWWDMEH_hvXJ9NYcjkU1X0",
+        authDomain: "itbootcamp-57d63.firebaseapp.com",
+        projectId: "itbootcamp-57d63",
+        storageBucket: "itbootcamp-57d63.appspot.com",
+        messagingSenderId: "911489206965",
+        appId: "1:911489206965:web:2b406d9ca91f3585690cfc",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      let db = firebase.firestore();
+    </script>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script></script>
