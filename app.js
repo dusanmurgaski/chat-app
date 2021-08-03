@@ -104,6 +104,7 @@ ulChatList.addEventListener("click", (e) => {
     ul.removeChild(li);
     db.collection("chats")
       .where("message", "==", porukaZaBrisanje)
+      .where("username", "==", `${username()}`)
       .get()
       .then((querySnapshot) => {
         querySnapshot.forEach((data) => {
