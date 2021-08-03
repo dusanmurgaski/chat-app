@@ -125,23 +125,41 @@ navRooms.addEventListener("click", (e) => {
 //   }
 // });
 
+// ulChatList.addEventListener("click", (e) => {
+//   if (e.target.tagName == "I") {
+//     let porukaZaBrisanje = e.target.getAttribute("name");
+//     let poruka = db
+//       .collection("chats")
+//       .where("message", "==", `${porukaZaBrisanje}`);
+
+//     let x = poruka.id;
+//     let getId = db.collection("chats").doc(x);
+//     getId
+//       .delete()
+//       .then(() => {
+//         console.log("uspesno obrisana poruka");
+//       })
+//       .catch((err) => {
+//         console.log(err);
+//       });
+//   }
+// });
+
 ulChatList.addEventListener("click", (e) => {
   if (e.target.tagName == "I") {
     let porukaZaBrisanje = e.target.getAttribute("name");
-    let poruka = db
-      .collection("chats")
-      .where("message", "==", `${porukaZaBrisanje}`);
-
-    let x = poruka.id;
-    let getId = db.collection("chats").doc(x);
-    getId
-      .delete()
-      .then(() => {
-        console.log("uspesno obrisana poruka");
+    let ul = e.target.parentElement.parentElement.parentElement;
+    let li = e.target.parentElement.parentElement;
+    ul.removeChild(li);
+    db.collection("chats")
+      .where("message", "==", porukaZaBrisanje)
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((data) => {
+          db.collection("chats").doc(`${data.id}`).delete();
+        });
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch((err) => console.log(err));
   }
 });
 
