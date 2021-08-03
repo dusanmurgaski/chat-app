@@ -96,55 +96,6 @@ navRooms.addEventListener("click", (e) => {
   localStorage.setItem("room", e.target.id);
 });
 
-// Brisanje poruka
-// ulChatList.addEventListener("click", (e) => {
-//   if (e.target.tagName == "I") {
-// console.log("kanta");
-//   }
-
-// ulChatList.addEventListener("click", (e) => {
-//   if (e.target.tagName == "I") {
-//     let porukaZaBrisanje = e.target.getAttribute("name");
-//     console.log(porukaZaBrisanje);
-//     let docToDelete = db
-//       .collection("chats")
-//       .where("message", "==", `${porukaZaBrisanje}`);
-//     let x = docToDelete.id;
-//     let getId = db.collection("chats").doc(x);
-//     // let id = getId.replace("chats/", "");
-//     db.collection("chats")
-//       .doc()
-//       .delete()
-//       .then(() => {
-//         console.log("Document successfully deleted!");
-//       })
-//       .catch((error) => {
-//         console.error("Error removing document: ", error);
-//       });
-//     console.log(getId);
-//   }
-// });
-
-// ulChatList.addEventListener("click", (e) => {
-//   if (e.target.tagName == "I") {
-//     let porukaZaBrisanje = e.target.getAttribute("name");
-//     let poruka = db
-//       .collection("chats")
-//       .where("message", "==", `${porukaZaBrisanje}`);
-
-//     let x = poruka.id;
-//     let getId = db.collection("chats").doc(x);
-//     getId
-//       .delete()
-//       .then(() => {
-//         console.log("uspesno obrisana poruka");
-//       })
-//       .catch((err) => {
-//         console.log(err);
-//       });
-//   }
-// });
-
 ulChatList.addEventListener("click", (e) => {
   if (e.target.tagName == "I") {
     let porukaZaBrisanje = e.target.getAttribute("name");
